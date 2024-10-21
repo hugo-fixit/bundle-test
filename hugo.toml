@@ -1,0 +1,59 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'FixIt Bundle'
+
+[params]
+  # FixIt 0.3.12 | NEW Custom partials config
+  # Custom partials must be stored in the /layouts/partials/ directory.
+  # Depends on open custom blocks https://fixit.lruihao.cn/references/blocks/
+  [params.customPartials]
+    head = [
+      "inject/component-projects.html",
+      "inject/fixit-docs-bookmark.html",
+      "inject/shortcode-rewards.html",
+    ]
+    profile = []
+    aside = []
+    comment = []
+    footer = []
+    widgets = []
+    assets = [
+      "inject/cmpt-mdevtools",
+      "inject/shortcode-caniuse.html",
+    ]
+    postFooterBefore = []
+    postFooterAfter = []
+
+  # Mobile Devtools config
+  [params.mDevtools]
+    enable = true
+    # "eruda", "vConsole" supported
+    type = "eruda"
+
+  # Content adapters config for component projects
+  # https://github.com/hugo-fixit/component-projects
+  [params.projectsAdapters]
+    enable = false
+    # Whether to show only public repos
+    onlyPublic = true
+    # Default categories and collections
+    categories = ["GitHub"]
+    collections = ["project"]
+    # Ignore repos in the ignore list
+    ignoreList = []
+
+[outputs]
+  _merge = "shallow"
+
+[taxonomies]
+  _merge = "shallow"
+
+[markup]
+  _merge = "shallow"
+
+[module]
+  [[module.imports]]
+    path = "github.com/hugo-fixit/fixit-bundle"
+  [module.hugoVersion]
+    extended = true
+    min = "0.134.1"
