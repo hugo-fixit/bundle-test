@@ -1,5 +1,12 @@
 go 1.20
 
 use .
+use ../FixIt
 use ../fixit-bundle
-
+use ../component-projects
+use ../cmpt-mdevtools
+use ../hugo-json-feed
+use ../shortcode-caniuse
+use ../shortcode-mmt-netease
+use ../shortcode-docs-bookmark
+use ../shortcode-rewards
